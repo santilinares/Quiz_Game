@@ -10,17 +10,17 @@ public class ChatGPTController {
 
     public ChatGPTController(ChatGPTService chatGPTService){
     }
-    @PostMapping("/generate-questions")
+    @GetMapping("/generate-questions")
     public String generateQuestions(){
         return ChatGPTService.generateQuestions();
     }
 
-    @PostMapping("check-answer")
+    @GetMapping("check-answer")
     public String checkAnswer(@RequestBody String question, String answer) {
         return ChatGPTService.checkAnswer(question, answer);
     }
 
-    @PostMapping("(read-questions")
+    @GetMapping("(read-questions")
     public List<String> readQuestions() {
         return ChatGPTService.readQuestions();
     }

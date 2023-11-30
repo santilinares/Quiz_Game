@@ -1,12 +1,12 @@
 {"questions": [
     {"question": "What is the capital of France?"},
     {"question": "Who painted the Mona Lisa?"},
-    {"question": "What is the tallest mountain in the world?"},
-    {"question": "What year did the Titanic sink?"},
-    {"question": "What is the chemical symbol for water?"},
-    {"question": "Who wrote the play Hamlet?"},
+    {"question": "What is the largest planet in our solar system?"},
     {"question": "In which year did World War II end?"},
+    {"question": "What is the chemical symbol for gold?"},
+    {"question": "What is the boiling point of water in Fahrenheit?"},
     {"question": "What is the currency of Japan?"},
-    {"question": "Who is the current president of the United States?"},
-    {"question": "What is the largest planet in our solar system?"}
+    {"question": "Who wrote the play Romeo and Juliet?"},
+    {"question": "What is the tallest mountain in the world?"},
+    {"question": "What is the melting point of ice in Celsius?"}
 ]}
