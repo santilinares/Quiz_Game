@@ -1,13 +1,17 @@
-package org.santiagolinares;
+package org.santiagolinares.model;
+
+import org.springframework.stereotype.Service;
 
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
-public class AudioRecorder {
+@Service
+public class AudioRecorderService {
 
-    public static void record() {
+    private static TargetDataLine targetLine;
+    public static void startRecording() {
         //Specifying the audio format for the one needed in SpeechToText.java class
         AudioFormat audioFormat = new AudioFormat(16000, 16, 1, true, false);
 
@@ -18,7 +22,7 @@ public class AudioRecorder {
                 System.err.println("Not Supported");
             }
 
-            TargetDataLine targetLine = (TargetDataLine) AudioSystem.getLine(dataInfo);
+            targetLine = (TargetDataLine) AudioSystem.getLine(dataInfo);
             targetLine.open();
 
             JOptionPane.showMessageDialog(null, "Hit ok to start recording");
@@ -40,14 +44,19 @@ public class AudioRecorder {
             };
 
             audioRecorderThread.start();
-            JOptionPane.showMessageDialog(null, "Hit ok to STOP recording");
-            //Stops the recording after hitting ok.
-            //The recording stops because the targetLine will be closed.
-            targetLine.stop();
-            targetLine.close();
-
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
     }
+
+    public static void stopRecording() {
+        if (targetLine != null) {
+            JOptionPane.showMessageDialog(null, "Hit ok to STOP recording");
+            // Stops the recording after hitting ok.
+            // The recording stops because the targetLine will be closed.
+            targetLine.stop();
+            targetLine.close();
+        }
+    }
+
 }

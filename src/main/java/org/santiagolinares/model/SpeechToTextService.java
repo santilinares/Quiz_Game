@@ -1,8 +1,9 @@
-package org.santiagolinares;
+package org.santiagolinares.model;
 
 
 import com.google.cloud.speech.v1.*;
 import com.google.protobuf.ByteString;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,7 +11,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class SpeechToText {
+@Service
+public class SpeechToTextService {
 
     public static String transform(String fileName) throws Exception{
         String transcription = "";
