@@ -1,12 +1,12 @@
-{"quiz_questions": [
+{"questions": [
     {"question": "What is the capital of France?"},
-    {"question": "Who painted the Mona Lisa?"},
+    {"question": "Who wrote the play Hamlet?"},
+    {"question": "What is the powerhouse of the cell?"},
     {"question": "What is the largest planet in our solar system?"},
+    {"question": "Who painted the Mona Lisa?"},
+    {"question": "What is the boiling point of water in Celsius?"},
     {"question": "In which year did World War II end?"},
-    {"question": "What is the tallest mountain in the world?"},
-    {"question": "Who wrote the play Romeo and Juliet?"},
     {"question": "What is the chemical symbol for gold?"},
-    {"question": "Which country is known as the Land of the Rising Sun?"},
-    {"question": "Who was the first person to walk on the moon?"},
-    {"question": "What is the largest desert in the world?"}
+    {"question": "What is the tallest mountain in the world?"},
+    {"question": "Who is the current president of the United States?"}
 ]}

@@ -12,6 +12,7 @@ public class Main {
         System.out.println(question);
         AudioRecorder.record();
         String answer = SpeechToText.transform(AUDIO_FILE);
+        System.out.println(answer);
         System.out.println(ChatGPTConfiguration.checkAnswer(question, answer));
     }
 }
