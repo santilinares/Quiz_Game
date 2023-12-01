@@ -18,6 +18,15 @@ import java.util.List;
 
 public class ChatGPTConfiguration {
 
+    private static final String FORMAT = "The JSON file should follow a specific structure to store a list of quiz questions. " +
+            "Each question is represented as an individual set enclosed in curly braces. " +
+            "Inside each set, there is a key-value pair, where the key is question, " +
+            "and the associated value is the actual question. All these questions are organized as a list," +
+            " surrounded by square brackets The name of this list should be: questions. " +
+            "This list is also surrounded by curly braces. " +
+            "This format ensures that the JSON file is well-structured, " +
+            "making it easy to represent and organize multiple quiz questions, each " +
+            "identified by the question key. Give me this format in plain text";
     private static final String FILE_PATH = "./src/data/questions/questions.json";
     private static final String URL = "https://api.openai.com/v1/chat/completions";
     private static final String API_KEY = System.getenv("OPENAI_KEY"); // Get API key from environment variable
@@ -58,17 +67,8 @@ public class ChatGPTConfiguration {
     }
 
     public static void generateQuestions(){
-        String format = " The JSON file should follow a specific structure to store a list of quiz questions. " +
-                "Each question is represented as an individual set enclosed in curly braces. " +
-                "Inside each set, there is a key-value pair, where the key is question, " +
-                "and the associated value is the actual question. All these questions are organized as a list," +
-                " surrounded by square brackets. This list is also surrounded by curly braces. " +
-                "This format ensures that the JSON file is well-structured, " +
-                "making it easy to represent and organize multiple quiz questions, each " +
-                "identified by the question key. Give me this format in plain text";
-
         String prompt = " Generate 10 questions for a quiz game. Format it for a JSON file." +
-                " Give me only the questions, without answers. " + format ;
+                " Give me only the questions, without answers. " + FORMAT;
         String response = chatGPT(prompt);
         System.out.println(response);
         saveAsJson(response);
